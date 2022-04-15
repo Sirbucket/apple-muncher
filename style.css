@@ -1,0 +1,89 @@
+#app {
+  font-family: Avenir;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+	color: #ffffff;
+	margin-top: 60px;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+
+body {
+	background-color: #ac3535;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+	margin-top: 10%;
+  width: 20%;
+	height: 20%;
+	background-image: var(--current-image);
+}
+
+.score {
+	background-color: #962727;
+	padding: 1em;
+	border: 1px;
+	width: 10%;
+	height: 10%;
+	align: center;
+	margin-left: auto;
+  margin-right: auto;
+	transition: all 250ms;
+}
+
+.score:hover {
+	transform: scale(1.4,1.4)
+}
+
+button {
+	background-color: #b44646;
+	padding: 1em;
+	border: 1px;
+	width: 15%;
+	height: 15%;
+	margin-left: auto;
+  margin-right: auto;
+	color: #ffffff;
+	align: center;
+	font-size: 16px;
+	transition: all 250ms;
+}
+
+button:hover {
+	transform: scale(1.1,1.1)
+}
+
+button:active {
+	transform: scale(0.9,0.9)
+}
+
+.image {
+  /* The transition line makes all changes
+  get animated */
+	transition: all 250ms;
+	opacity: 0.4;
+}
+
+.image:hover {
+	transform: scale(1.1,1.1) rotate(5deg);
+	opacity: 0.6;
+}
+
+.image:active {
+	transform: scale(0.9,0.9) rotate(-15deg);
+	opacity: 1;
+}
+
+.yes:active {
+	background-color: #b44646;
+	color: #ffffff;
+}
+
+.no:active {
+	color: #a05f5f;
+	background-color: #ac887d
+}
