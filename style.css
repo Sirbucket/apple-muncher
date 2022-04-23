@@ -17,7 +17,7 @@ body {
 .center {
   margin-left: auto;
   margin-right: auto;
-	margin-top: 10%;
+	margin-top: 25px;
   width: 20%;
 	height: 20%;
 	background-image: var(--current-image);
@@ -39,6 +39,13 @@ body {
 	transform: scale(1.4,1.4)
 }
 
+.clicker-buttons {
+	margin-top: 50px;
+}
+
+.buttons {
+	margin-top: 50px;
+}
 button {
 	background-color: #b44646;
 	padding: 1em;
