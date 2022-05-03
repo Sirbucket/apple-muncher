@@ -1,10 +1,9 @@
 const image: HTMLDivElement = document.querySelector(".image");
 const score: HTMLDivElement = document.querySelector('.score');
 const Math_round = Math.round
-
 const ms: number = 500;
-const numMod: number = 200;
-const multMod: number = 1.1;
+const numMod: number = 100;
+const multMod: number = 0.1;
 
 let clicks: number = 0;
 let clickMod: number = 1;
@@ -38,17 +37,18 @@ const removeMark = (button: HTMLButtonElement, str: string) => {
 const makeButton = (number: number, str: string) => {
 	const button: HTMLButtonElement = document.createElement('button');
 	let cost: number = Math_round(number * numMod);
+	let newCost: number = cost;
 	button.addEventListener("click", () => {
-		if (clicks >= cost) {
+		if (clicks >= newCost) {
 			removeMark(button, "no");
 			markButton(button, "yes");
 			setInterval(updateScore, ms, number);
 
-			clicks -= Math.round(number * numMod);
-			const newCost = Math_round(cost *= multMod)
+			clicks -= newCost;
+			newCost += Math_round(cost*multMod);
 
 			button.textContent = `${str} (Cost: ${newCost.toString()})`;
-			score.textContent = Math_round(clicks).toString();
+			score.textContent = Math.round(clicks).toString();
 		}
 		else {
 			removeMark(button, "yes");
@@ -62,16 +62,18 @@ const makeButton = (number: number, str: string) => {
 //Makes a button for adding clicks when you click.
 const makeClickerButton = (number: number, str: string) => {
 	const clickerButton: HTMLButtonElement = document.createElement('button');
-	let cost = number * (numMod * 2);
+	let cost: number = Math_round(number * (numMod * 2));
+	let newCost: number = cost;
 	clickerButton.addEventListener("click", () => {
-		if (clicks >= cost) {
+		if (clicks >= newCost) {
 			removeMark(clickerButton, "no");
 			markButton(clickerButton, "yes");
 
 			currentClickMod += Math_round(clickMod * number);
-			clicks -= cost;
+			clicks -= newCost;
+			newCost += Math_round(cost*multMod);
 
-			const newCost = Math.round(cost *= multMod);
+
 			clickerButton.textContent = `${str} (Cost: ${newCost.toString()})`;
 			score.textContent = Math_round(clicks).toString();
 		}
