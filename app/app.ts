@@ -1,6 +1,7 @@
 const image: HTMLDivElement = document.querySelector(".image");
 const score: HTMLDivElement = document.querySelector('.score');
-const Math_round = Math.round
+const Math_round = Math.round;
+
 const ms: number = 500;
 const numMod: number = 100;
 const multMod: number = 0.1;
