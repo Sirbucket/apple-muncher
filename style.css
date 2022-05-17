@@ -18,8 +18,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 	margin-top: 25px;
-	width: 20%;
-	height: 20%;
 	background-image: var(--current-image);
 }
 
@@ -74,8 +72,6 @@ button:active {
 }
 
 .image {
-  /* The transition line makes all changes
-  get animated */
 	transition: all 100ms;
 	opacity: 0.65;
   -webkit-user-drag: none;
@@ -83,11 +79,11 @@ button:active {
 }
 
 .image:hover {
-	transform: rotate(15deg);
+	transform: scale(1.1,1.1);
 }
 
 .image:active {
-	transform: rotate(-15deg);
+	transform: scale(1.3,1.3);
 	opacity: 1;
 }
 
